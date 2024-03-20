@@ -4,10 +4,54 @@ local M = {}
 M.ui = {
   theme = "onedark",
 
-  -- hl_override = {
-  -- 	Comment = { italic = true },
-  -- 	["@comment"] = { italic = true },
-  -- },
+  hl_override = {
+    Comment = { italic = true },
+    ["@comment"] = { italic = true },
+    DiffAdd = {
+      bg = "#005f00",
+      fg = "NONE",
+    },
+    DiffAdded = {
+      bg = "#005f00",
+      fg = "NONE",
+    },
+    DiffText = {
+      bg = "#4C566A",
+      fg = "NONE",
+    },
+    DiffDelete = {
+      bg = "#5f0000",
+      fg = "NONE",
+    },
+    DiffRemoved = {
+      bg = "#5f0000",
+      fg = "NONE",
+    },
+    DiffChange = {
+      bg = "#4C566A",
+      fg = "NONE",
+    },
+    DiffModified = {
+      bg = "#4C566A",
+      fg = "NONE",
+    },
+    DiffChangeDelete = {
+      bg = "#5f0000",
+      fg = "NONE",
+    },
+    DiffNewFile = {
+      bg = "#005f00",
+      fg = "NONE",
+    },
+    TelescopeSelection = {
+      fg = "#61afef",
+    },
+  },
+  hl_add = {
+    NvimTreeOpenedFolderName = { fg = "green", bold = true },
+    Winbar = { bg = "NONE" },
+    WinBarNC = { fg = "NONE", bg = "NONE" },
+  },
   -- telescope = { style = "bordered" },
   lsp = {
     signature = false,
