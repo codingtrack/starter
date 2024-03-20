@@ -116,6 +116,7 @@ return {
         end,
       },
     },
+    opts = require "configs.telescope"
   },
   {
     "numToStr/Comment.nvim",

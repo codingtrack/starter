@@ -38,7 +38,7 @@ map("n", "<leader>gg", "<cmd>Neogit<CR>", { desc = "Neogit" })
 -- diffview
 map("n", "<leader>do", "<cmd>DiffviewOpen<CR>", { desc = "DiffviewOpen" })
 map("n", "<leader>dc", "<cmd>DiffviewClose<CR>", { desc = "DiffviewClose" })
-map("n", "<leader>df", "<cmd>DiffviewFileHistory<CR>", { desc = "DiffviewFileHistory" })
+map("n", "<leader>df", "<cmd>DiffviewFileHistory %<CR>", { desc = "DiffviewFileHistory" })
 --
 -- lazy
 map("n", "<leader>ps", "<cmd>Lazy sync<CR>", { desc = "Lazy sync" })
