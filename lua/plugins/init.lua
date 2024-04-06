@@ -12,6 +12,15 @@ return {
     config = function()
       require "configs.lspconfig"
     end,
+    dependencies = {
+      {
+        "ray-x/lsp_signature.nvim",
+        opts = require "configs.lsp_signature",
+        config = function(_, opts)
+          require("lsp_signature").setup(opts)
+        end,
+      },
+    },
   },
 
   {
@@ -116,7 +125,7 @@ return {
         end,
       },
     },
-    opts = require "configs.telescope"
+    opts = require "configs.telescope",
   },
   {
     "numToStr/Comment.nvim",
