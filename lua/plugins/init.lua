@@ -140,7 +140,7 @@ return {
   },
   {
     "NeogitOrg/neogit",
-    -- branch = "nightly",
+    branch = "nightly",
     cmd = { "Neogit" },
     dependencies = {
       "sindrets/diffview.nvim",
