@@ -140,28 +140,29 @@ return {
   },
   {
     "NeogitOrg/neogit",
-    branch = "nightly",
+    -- branch = "nightly",
     cmd = { "Neogit" },
-    dependencies = {
-      "sindrets/diffview.nvim",
-      cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewFileHistory" },
-      config = function()
-        require("diffview").setup {
-          enhanced_diff_hl = true,
-          hooks = {
-            diff_buf_read = function()
-              -- Change local options in diff buffers
-              vim.opt_local.wrap = true
-            end,
-          },
-        }
-      end,
-    },
+    dependencies = {},
     config = function()
       require("neogit").setup {
         integrations = { diffview = true },
         disable_commit_confirmation = true,
         disable_builtin_notifications = true,
+      }
+    end,
+  },
+  {
+    "sindrets/diffview.nvim",
+    cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewFileHistory" },
+    config = function()
+      require("diffview").setup {
+        enhanced_diff_hl = true,
+        hooks = {
+          diff_buf_read = function()
+            -- Change local options in diff buffers
+            vim.opt_local.wrap = true
+          end,
+        },
       }
     end,
   },
