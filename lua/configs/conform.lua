@@ -4,6 +4,9 @@ local options = {
     css = { "prettier" },
     html = { "prettier" },
     cpp = { "clang-format" },
+    yaml = { "yamlfmt" },
+    cmake = { "gersemi" },
+    json = { "fixjson" },
   },
 
   -- format_on_save = {
