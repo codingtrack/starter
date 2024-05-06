@@ -7,6 +7,7 @@ local options = {
     yaml = { "yamlfmt" },
     cmake = { "gersemi" },
     json = { "fixjson" },
+    bash = { "shfmt" },
   },
 
   -- format_on_save = {
