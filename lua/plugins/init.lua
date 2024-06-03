@@ -130,10 +130,10 @@ return {
     },
     opts = require "configs.telescope",
   },
-  {
-    "numToStr/Comment.nvim",
-    dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
-  },
+  -- {
+  --   "numToStr/Comment.nvim",
+  --   dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
+  -- },
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
@@ -317,11 +317,11 @@ return {
     "ojroques/nvim-bufdel",
     cmd = { "BufDel", "BufDelOthers" },
   },
-  {
-    "j-hui/fidget.nvim",
-    event = "LspAttach",
-    opts = require "configs.fidget",
-  },
+  -- {
+  --   "j-hui/fidget.nvim",
+  --   event = "LspAttach",
+  --   opts = require "configs.fidget",
+  -- },
   {
     "nvimdev/hlsearch.nvim",
     event = "BufReadPost",

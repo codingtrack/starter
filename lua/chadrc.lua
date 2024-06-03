@@ -109,6 +109,7 @@ M.base46 = {
     "notify",
     "codeactionmenu",
     "semantic_tokens",
+    "neogit",
   },
 }
 
