@@ -24,34 +24,6 @@ return {
   },
 
   {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "lua-language-server",
-        "clangd",
-        "bash-language-server",
-        "gopls",
-        "marksman",
-        "json-lsp",
-        "yaml-language-server",
-        "pyright",
-        "cmake-language-server",
-
-        -- format
-        "prettier",
-        "shfmt",
-        "stylua",
-        "gofumpt",
-        "clang-format",
-        "black",
-        "yamlfmt",
-        "gersemi",
-        "fixjson",
-      },
-    },
-  },
-
-  {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
       {
@@ -149,7 +121,7 @@ return {
     config = function()
       require("neogit").setup {
         integrations = { diffview = true, telescope = true },
-        auto_show_console = false;
+        auto_show_console = false,
         -- disable_commit_confirmation = true,
         -- disable_builtin_notifications = true,
       }
