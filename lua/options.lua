@@ -11,7 +11,6 @@ vim.opt.softtabstop = 4
 vim.opt.diffopt = "filler,iwhite,internal,linematch:60,algorithm:patience"
 vim.opt.mousemodel = "extend"
 vim.opt.swapfile = false
-vim.opt.fileencoding = "utf-8"
 vim.opt.writebackup = false
 vim.opt.updatetime = 100
 vim.opt.breakindent = true -- Wrap indent to match  line start

@@ -1,5 +1,4 @@
 dofile(vim.g.base46_cache .. "lsp")
-require "nvchad.lsp"
 local lspconfig = require "lspconfig"
 local map = vim.keymap.set
 local conf = require("nvconfig").ui.lsp

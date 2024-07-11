@@ -15,13 +15,13 @@ map("n", "q", "<cmd>q<CR>", { desc = "Quit" })
 map("n", "<leader>fp", "<cmd>Telescope projects<CR>", { desc = "Find projects" })
 map("n", "<leader>fs", "<cmd>Telescope grep_string<CR>", { desc = "Find word" })
 map("n", "<leader>fr", function()
-    require("telescope").extensions.frecency.frecency {}
+  require("telescope").extensions.frecency.frecency {}
 end, { desc = "Find frecency" })
 map(
-    "n",
-    "<leader>fw",
-    "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
-    { desc = "Live grep" }
+  "n",
+  "<leader>fw",
+  "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+  { desc = "Live grep" }
 )
 map("n", "<leader>fz", "<cmd>Telescope zoxide list<CR>", { desc = "Zoxide list" })
 map("n", "<leader>fc", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Current buffer search" })
@@ -49,44 +49,41 @@ map("n", "<leader>pc", "<cmd>Lazy check<CR>", { desc = "Lazy check" })
 map("n", "gd", "<cmd>Glance definitions<CR>", { desc = "Glance definitions" })
 map("n", "gr", "<cmd>Glance references<CR>", { desc = "Glance references" })
 map("n", "<leader>ls", function()
-    local aerial_avail, _ = pcall(require, "aerial")
-    if aerial_avail then
-        require("telescope").extensions.aerial.aerial()
-    else
-        require("telescope.builtin").lsp_document_symbols()
-    end
+  local aerial_avail, _ = pcall(require, "aerial")
+  if aerial_avail then
+    require("telescope").extensions.aerial.aerial()
+  else
+    require("telescope.builtin").lsp_document_symbols()
+  end
 end, { desc = "Document symbols" })
 map("n", "<leader>lS", "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", { desc = "Workspace symbols" })
 map("n", "<leader>li", "<cmd>LspInfo<CR>", { desc = "LspInfo" })
-map("n", "<leader>ld", "<cmd>Telescope diagnostics<CR>", { desc = "Diagnostics" })
+map("n", "<leader>ld", function()
+  require("telescope.builtin").diagnostics { bufnr = 0 }
+end, { desc = "Diagnostics" })
 map("n", "<leader>lf", function()
-    vim.diagnostic.open_float { border = "rounded" }
+  vim.diagnostic.open_float { border = "rounded" }
 end, { desc = "Floating diagnostic" })
 map("n", "<leader>ca", function()
-    require("actions-preview").code_actions()
+  require("actions-preview").code_actions()
 end, { desc = "LSP code action" })
 
 -- spectre
 map("n", "<leader>ss", "<cmd>lua require('spectre').open()<CR>", { desc = "Open spectre" })
 map(
-    "n",
-    "<leader>sw",
-    "<cmd>lua require('spectre').open_visual({select_word=true})<CR>",
-    { desc = "Search current word" }
+  "n",
+  "<leader>sw",
+  "<cmd>lua require('spectre').open_visual({select_word=true})<CR>",
+  { desc = "Search current word" }
 )
 map(
-    "n",
-    "<leader>sp",
-    "<cmd>lua require('spectre').open_file_search({select_word=true})<CR>",
-    { desc = "Search on current file" }
+  "n",
+  "<leader>sp",
+  "<cmd>lua require('spectre').open_file_search({select_word=true})<CR>",
+  { desc = "Search on current file" }
 )
 map("v", "<leader>sw", "<cmd>lua require('spectre').open_visual()<CR>", { desc = "Search current word" })
-map(
-    "v",
-    "<leader>sp",
-    "<cmd>lua require('spectre').open_file_search()<CR>",
-    { desc = "Search on current file" }
-)
+map("v", "<leader>sp", "<cmd>lua require('spectre').open_file_search()<CR>", { desc = "Search on current file" })
 --
 -- hop
 map("n", "<leader>hw", "<cmd>HopWord<CR>", { desc = "HopWord" })
@@ -127,7 +124,7 @@ map("n", "<leader>ft", "<cmd>TodoTelescope<CR>", { desc = "TodoTelescope" })
 
 -- yanky
 map("n", "<leader>fy", function()
-    require("telescope").extensions.yank_history.yank_history {}
+  require("telescope").extensions.yank_history.yank_history {}
 end, { desc = "Open Yank History" })
 
 -- delete map

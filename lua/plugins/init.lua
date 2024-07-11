@@ -338,4 +338,18 @@ return {
     },
     config = require "configs.noice",
   },
+  {
+    "rachartier/tiny-inline-diagnostic.nvim",
+    event = "VeryLazy",
+    config = function()
+      local x = vim.diagnostic.severity
+      vim.diagnostic.config {
+        virtual_text = false,
+        signs = { text = { [x.ERROR] = "󰅙", [x.WARN] = "", [x.INFO] = "󰋼", [x.HINT] = "󰌵" } },
+        underline = true,
+        float = { border = "single" },
+      }
+      require("tiny-inline-diagnostic").setup()
+    end,
+  },
 }
