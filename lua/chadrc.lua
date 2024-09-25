@@ -1,12 +1,22 @@
--- This file  needs to have same structure as nvconfig.lua
--- https://github.com/NvChad/NvChad/blob/v2.5/lua/nvconfig.lua
+-- This file needs to have same structure as nvconfig.lua 
+-- https://github.com/NvChad/ui/blob/v2.5/lua/nvconfig.lua
+-- Please read that file to know all available options :( 
 
 ---@type ChadrcConfig
 local M = {}
 
-M.ui = {
+M.base46 = {
   theme = "onedark",
 
+  integrations = {
+    "hop",
+    "todo",
+    "rainbowdelimiters",
+    "notify",
+    "codeactionmenu",
+    "semantic_tokens",
+    "neogit",
+  },
   hl_override = {
     Comment = { italic = true },
     ["@comment"] = { italic = true },
@@ -55,6 +65,9 @@ M.ui = {
     Winbar = { bg = "NONE" },
     WinBarNC = { fg = "NONE", bg = "NONE" },
   },
+}
+
+M.ui = {
   -- telescope = { style = "bordered" },
   lsp = {
     signature = false,
@@ -102,15 +115,29 @@ M.term = {
   },
 }
 
-M.base46 = {
-  integrations = {
-    "hop",
-    "todo",
-    "rainbowdelimiters",
-    "notify",
-    "codeactionmenu",
-    "semantic_tokens",
-    "neogit",
+M.mason = {
+  cmd = true,
+  pkgs = {
+    "lua-language-server",
+    "clangd",
+    "bash-language-server",
+    "gopls",
+    "marksman",
+    "json-lsp",
+    "yaml-language-server",
+    "pyright",
+    "cmake-language-server",
+
+    -- format
+    "prettier",
+    "shfmt",
+    "stylua",
+    "gofumpt",
+    "clang-format",
+    "black",
+    "yamlfmt",
+    "gersemi",
+    "fixjson",
   },
 }
 

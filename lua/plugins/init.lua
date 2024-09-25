@@ -2,11 +2,10 @@ return {
   {
     "stevearc/conform.nvim",
     -- event = 'BufWritePre', -- uncomment for format on save
-    config = function()
-      require "configs.conform"
-    end,
+    opts = require "configs.conform",
   },
 
+  -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -342,14 +341,13 @@ return {
     "rachartier/tiny-inline-diagnostic.nvim",
     event = "VeryLazy",
     config = function()
-      local x = vim.diagnostic.severity
-      vim.diagnostic.config {
-        virtual_text = false,
-        signs = { text = { [x.ERROR] = "󰅙", [x.WARN] = "", [x.INFO] = "󰋼", [x.HINT] = "󰌵" } },
-        underline = true,
-        float = { border = "single" },
+      require("tiny-inline-diagnostic").setup {
+        options = {
+          virt_texts = {
+            priority = 10,
+          },
+        },
       }
-      require("tiny-inline-diagnostic").setup()
     end,
   },
 }
