@@ -77,19 +77,23 @@ lspconfig.clangd.setup {
     "--enable-config",
     "--background-index",
     "--query-driver=" .. get_binary_path_list { "clang++", "clang", "gcc", "g++" },
-    "--all-scopes-completion",
+    "--all-scopes-completion=true",
     "--completion-style=detailed",
     "--header-insertion-decorators",
     "--header-insertion=never",
+    "--compile_args_from=filesystem",
+    "--completion-parse=auto",
     -- "--malloc-trim",
     "--pch-storage=memory",
     "--limit-references=3000",
     "--limit-results=350",
+    "--log=error",
     "-j=2",
   },
   root_dir = function(fname)
     ---@diagnostic disable-next-line: deprecated
-    return lspconfig.util.root_pattern(unpack(root_files))(fname) or lspconfig.util.find_git_ancestor(fname)
+    -- return lspconfig.util.root_pattern(unpack(root_files))(fname) or lspconfig.util.find_git_ancestor(fname)
+    return "code"
   end,
   single_file_support = true,
 }

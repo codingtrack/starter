@@ -7,6 +7,14 @@ return function()
     end,
   }
 
+  local ftdetect = {
+    name = "ftdetect",
+    opts = { defer = true },
+    disable = function()
+      vim.api.nvim_set_option_value("filetype", "bigfile", { scope = "local" })
+    end,
+  }
+
   local wilder = {
     name = "wilder",
     opts = { defer = true },
@@ -28,6 +36,7 @@ return function()
       "filetype",
       "matchparen",
       cmp,
+      ftdetect,
       -- wilder,
     },
   }

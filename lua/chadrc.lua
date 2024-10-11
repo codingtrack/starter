@@ -1,12 +1,13 @@
--- This file needs to have same structure as nvconfig.lua 
--- https://github.com/NvChad/ui/blob/v2.5/lua/nvconfig.lua
--- Please read that file to know all available options :( 
+-- This file needs to have same structure as nvconfig.lua
+-- https://github.com/NvChad/ui/blob/v3.0/lua/nvconfig.lua
+-- Please read that file to know all available options :(
 
 ---@type ChadrcConfig
 local M = {}
 
 M.base46 = {
   theme = "onedark",
+  theme_toggle = { "onedark", "catppuccin" },
 
   integrations = {
     "hop",
@@ -69,37 +70,32 @@ M.base46 = {
 
 M.ui = {
   -- telescope = { style = "bordered" },
+  cmp = {
+    icons_left = false, -- only for non-atom styles!
+    lspkind_text = true,
+    style = "atom_colored", -- default/flat_light/flat_dark/atom/atom_colored
+    format_colors = {
+      tailwind = true, -- will work for css lsp too
+      icon = "󱓻",
+    },
+  },
   lsp = {
     signature = false,
-    semantic_tokens = false,
-  },
-  nvdash = {
-    load_on_startup = true,
-    header = {
-      " ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗",
-      " ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║",
-      " ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║",
-      " ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║",
-      " ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║",
-      " ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝",
-    },
-    buttons = {
-      { "  Find File", "Spc f f", "Telescope find_files" },
-      { "󰈚  Recent Files", "Spc f o", "Telescope oldfiles" },
-      { "󰈭  Find Word", "Spc f w", "Telescope live_grep" },
-      { "  Themes", "Spc t h", "Telescope themes" },
-      { "  Mappings", "Spc c h", "NvCheatsheet" },
-    },
+    semantic_tokens = true,
   },
   statusline = {
     theme = "default", -- default/vscode/vscode_colored/minimal
     separator_style = "round",
-    overriden_modules = function(modules)
-      modules[5] = (function()
-        return ""
-      end)()
-    end,
+    -- overriden_modules = function(modules)
+    --   modules[5] = (function()
+    --     return ""
+    --   end)()
+    -- end,
   },
+}
+
+M.nvdash = {
+  load_on_startup = true,
 }
 
 M.term = {
