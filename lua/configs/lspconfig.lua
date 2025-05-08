@@ -6,6 +6,21 @@ vim.diagnostic.config {
   virtual_text = false,
 }
 
+local nvlsp = require "nvchad.configs.lspconfig"
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    nvlsp.on_attach(_, args.buf)
+
+    local bufnr = args.buf
+    local opts = { buffer = bufnr, silent = true }
+    vim.keymap.set('n', 'gd', '<cmd>Glance definitions<CR>', opts)
+    vim.keymap.set('n', 'gD', '<cmd>Glance type_definitions<CR>', opts)
+    vim.keymap.set('n', 'gr', '<cmd>Glance references<CR>', opts)
+    vim.keymap.set('n', 'gm', '<cmd>Glance implementations<CR>', opts)
+  end,
+})
+
 -- EXAMPLE
 local servers = { "bashls", "gopls", "marksman", "yamlls", "pyright", "cmake", "jsonls", "clangd" }
 vim.lsp.enable(servers)

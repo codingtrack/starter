@@ -46,8 +46,8 @@ map("n", "<leader>pi", "<cmd>Lazy<CR>", { desc = "Lazy info" })
 map("n", "<leader>pc", "<cmd>Lazy check<CR>", { desc = "Lazy check" })
 --
 -- lspconfig
-map("n", "gd", "<cmd>Glance definitions<CR>", { desc = "Glance definitions" })
-map("n", "gr", "<cmd>Glance references<CR>", { desc = "Glance references" })
+-- map("n", "gd", "<cmd>Glance definitions<CR>", { desc = "Glance definitions" })
+-- map("n", "gr", "<cmd>Glance references<CR>", { desc = "Glance references" })
 map("n", "<leader>ls", function()
   local aerial_avail, _ = pcall(require, "aerial")
   if aerial_avail then
