@@ -17,6 +17,7 @@ M.base46 = {
     "codeactionmenu",
     "semantic_tokens",
     "neogit",
+    "diffview",
   },
   hl_override = {
     Comment = { italic = true },

@@ -22,6 +22,8 @@ return {
     },
   },
 
+  -- test new blink
+  { import = "nvchad.blink.lazyspec" },
   {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
@@ -34,6 +36,10 @@ return {
       {
         "abecodes/tabout.nvim",
         config = require "configs.tabout",
+      },
+      {
+        "JoosepAlviste/nvim-ts-context-commentstring",
+        config = require "configs.commentstring",
       },
     },
 
@@ -142,6 +148,12 @@ return {
     end,
   },
   {
+    "terrortylor/nvim-comment",
+    lazy = true,
+    event = { "CursorHold", "CursorHoldI" },
+    config = require "configs.comment",
+  },
+  {
     "ethanholz/nvim-lastplace",
     event = "BufReadPost",
     config = function()
@@ -189,10 +201,9 @@ return {
     end,
   },
   {
-    "LunarVim/bigfile.nvim",
+    "pteroctopus/faster.nvim",
     lazy = false,
     cond = true,
-    config = require "configs.bigfile",
   },
   {
     "karb94/neoscroll.nvim",
@@ -333,7 +344,7 @@ return {
 
       --   `nvim-notify` is only needed, if you want to use the notification view.
       --   If not available, we use `mini` as the fallback
-      "rcarriga/nvim-notify",
+      -- "rcarriga/nvim-notify",
     },
     config = require "configs.noice",
   },
@@ -343,9 +354,8 @@ return {
     config = function()
       require("tiny-inline-diagnostic").setup {
         options = {
-          virt_texts = {
-            priority = 10,
-          },
+          show_source = true,
+          multiple_diag_under_cursor = true,
         },
       }
     end,

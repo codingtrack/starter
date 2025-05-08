@@ -37,6 +37,7 @@ return function()
       },
     },
     messages = {
+      enabled = false,
       view_search = false,
     },
     -- you can enable a preset for easier configuration
